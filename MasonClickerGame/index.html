@@ -5,56 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-<<<<<<< Updated upstream
     <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-        <div>
-            <img src="https://cdn.mos.cms.futurecdn.net/R9fBTt7ePSiSNUohQGVcUk.jpg">
-      </div>
-</body>
-</html>
-=======
-    <style>
-      #enemy-wrapper {
-        text-align: center;
-      }
-    </style>
   </head>
   <body>
-    <div id="enemy-wrapper"></div>
-    <button onclick="start_game()">click me</button>
+    <div id="combat-container">
+      <div id="enemy-container">
+        <div id="enemy-wrapper"></div>
+        <div id="weapon-wrapper"></div>
+      </div>
+    </div>
+    <div id="start-screen"><button onclick="start_game()">Start Game</button></div>
     <div>
-      <h1>Fullbar Count: <span id="fullbarct">0</span></h1>
-      <h1>Quarter Bar Count: <span id="quarbarct">0</span></h1>
     </div>
   </body>
-  <script>
-    var enemy_wrapper = document.getElementById("enemy-wrapper");
-    var enemy_theme = new Audio("enemy-theme.ogg");
-    var fullbarct = document.getElementById("fullbarct");
-    var quarbarct = document.getElementById("quarbarct");
-
-    function start_game() {
-      enemy_theme.play();
-      enemy_wrapper.innerHTML = '<img src="DancingHollow.gif">';
-      full_bar_sequencer();
-      quarter_bar_sequencer();
-    }
-
-    function full_bar_sequencer() {
-      setTimeout(function () {
-        full_bar_sequencer();
-      }, 1600);
-      fullbarct.innerHTML = parseInt(fullbarct.innerHTML) + 1;
-    }
-
-    function quarter_bar_sequencer() {
-      setTimeout(function () {
-        quarter_bar_sequencer();
-      }, 400);
-      quarbarct.innerHTML = parseInt(quarbarct.innerHTML) + 1;
-    }
-  </script>
+  <script src="Dangedsoles.js"></script>
 </html>
->>>>>>> Stashed changes
