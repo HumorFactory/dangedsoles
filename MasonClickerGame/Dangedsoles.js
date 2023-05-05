@@ -14,7 +14,7 @@ var EnemyList = {
         "alive": true,
     },
     "fish": {
-        "image_dancing": "Media/images/DancingFish.gif",
+        "image_dancing": "Media/images/Sprite-0002.png",
         "image_hurt": "Media/images/HurtFish.png",
         "health": 200,
         "alive": true,
