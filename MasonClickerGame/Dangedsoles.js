@@ -22,8 +22,22 @@ var EnemyList = {
     "ghost_man": {
         "image_dancing": "Media/images/DancingFish.gif",
         "image_hurt": "Media/images/HurtFish.png",
-        "health": 5000,
+        "health": 1000,
         "alive": true,
+    },
+    "Dead_Army":{
+        "image_dancing": "Media/images/DancingDeadArmy.gif",
+        "image_hurt": "Media/image/HurtDeadArmy.png",
+        "health":5000,
+        "alive":true,
+    },
+    "Eyez":{
+        "image_dancing":"Media/images/DancingEyez.gif",
+        "image_hurt": "Media/images/HurtEyez.png",
+        "health": 10000,
+        "alive":true,
+
+
     }
 }
 
