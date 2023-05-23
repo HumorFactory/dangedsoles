@@ -30,7 +30,8 @@ img {
 
 #enemy-name {
     color: #FFFFFF;
-    font-size: 50px;
+    font-size: 45px;
+
 }
 
 .damage-button {
@@ -51,6 +52,15 @@ img {
 #enemy-health {
     -webkit-appearance: none;
     appearance: none;
-    width: 250px;
-    height: 20px;
+    width: 50%;
+    height: 30px;
+
+}
+
+.weapon {
+    position: relative;
+    width: 200px;
+    right:-130px;
+    top:-250px;
+
 }
