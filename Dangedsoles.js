@@ -14,7 +14,7 @@ var EnemyList = {
         "name": "Hollow",
         "image_dancing": "Media/images/DancingHollow.gif",
         "image_hurt": "Media/images/HurtHollow.png",
-        "health": 1,
+        "health": 50,
         "alive": true,
         "soles": 10, //Soles
     },
@@ -71,6 +71,12 @@ var WeaponList = {
         "image_default": "Media/images/BanishedSaber.png",
         "image_hitting": "Media/images/BanishedSaber.gif",
         "damage": 5,
+    },
+    4:{
+        "name": "Knight's short sword",
+        "image_default": "Media/images/Kightsshortsword.png",
+        "image_hitting": "Media/images/Knightsshortsword.gif",
+        "damage": 10,
     }
 }
 // functions 
