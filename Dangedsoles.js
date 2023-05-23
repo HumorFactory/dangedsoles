@@ -14,7 +14,7 @@ var EnemyList = {
         "name": "Hollow",
         "image_dancing": "Media/images/DancingHollow.gif",
         "image_hurt": "Media/images/HurtHollow.png",
-        "health": 100,
+        "health": 50,
         "alive": true,
         "soles": 10, //Soles
     },
@@ -22,7 +22,7 @@ var EnemyList = {
         "name": "Big Black Corroder",
         "image_dancing": "Media/images/DancingBBC.gif",
         "image_hurt": "Media/images/HurtFish.png",
-        "health": 200,
+        "health": 100,
         "alive": true,
         "soles": 20,
     },
@@ -30,7 +30,7 @@ var EnemyList = {
         "name": "Ghost",
         "image_dancing": "Media/images/DancingGhost.gif",
         "image_hurt": "Media/images/HurtGhost.png",
-        "health": 1000,
+        "health": 500,
         "alive": true,
         "soles" : 100,
     },
@@ -38,7 +38,7 @@ var EnemyList = {
         "name": "Dead Army",
         "image_dancing": "Media/images/DancingDeadArmy.gif",
         "image_hurt": "Media/images/HurtDeadArmy.png",
-        "health":5000,
+        "health":2500,
         "alive":true,
         "soles": 500,
     },
@@ -46,7 +46,7 @@ var EnemyList = {
         "name": "Eyez",
         "image_dancing":"Media/images/DancingEyez.gif",
         "image_hurt": "Media/images/HurtEyez.png",
-        "health": 10000,
+        "health": 5000,
         "alive":true,
         "soles": 1000,
     },
@@ -140,7 +140,7 @@ function damageEnemy() {
             enemy_wrapper.innerHTML = "";
             document.getElementById("enemy-health").remove();
             document.getElementById("enemy-name").remove();
-            var death = new Audio("Media/audio/Souls.mp3");
+            var death = new Audio("Media/Audio/Souls.mp3");
             death.play();
             enemy_integer++;
             summon_enemy(EnemyList[enemy_integer]);
