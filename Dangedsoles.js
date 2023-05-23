@@ -14,7 +14,7 @@ var EnemyList = {
         "name": "Hollow",
         "image_dancing": "Media/images/DancingHollow.gif",
         "image_hurt": "Media/images/HurtHollow.png",
-        "health": 50,
+        "health": 1,
         "alive": true,
         "soles": 10, //Soles
     },
