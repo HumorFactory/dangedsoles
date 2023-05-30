@@ -1,64 +1,64 @@
 @font-face {
-    font-family: "Thintel";
-    src: url("http://127.0.0.1:5500/Media/Fonts/munro.ttf");
+    font-family: "MATURASC";
+    src: url("media/Fonts/maturasc.woff");
+}
+
+* {
+    font-family: "Arial", Helvetica, sans-serif!important;
 }
 html {
-    font-family: 'Thintel';
-    background-color: #2F2525;
-    overflow: hidden;
+    background-color: #2F2525
 }
 img {
-    width: 100%;
+  width: 100%;
 }
 
 #enemy-container {
-    text-align: center;
-    display: flex;
-    justify-content: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
-#enemy-wrapper, #weapon-wrapper {
-    position: absolute;
+#enemy-wrapper,
+#weapon-wrapper {
+  position: absolute;
 }
 
 #enemy-wrapper {
-    width: 512px;
-    margin:1rem;
+  width: 512px;
+  margin: 1rem;
 }
 
 #enemy-name {
-    color: #FFFFFF;
-    font-size: 45px;
-
+  color: #ffffff;
+  font-size: 45px;
 }
 
 .damage-button {
-    background-color: transparent;
-    outline: none;
-    border: none;
+  background-color: transparent;
+  outline: none;
+  border: none;
 }
 
 #weapon-wrapper {
-    top:10px;
+  top: 10px;
 }
 
 #combat-container {
-    text-align: center;
-    justify-content: center;
+  text-align: center;
+  justify-content: center;
 }
 
 #enemy-health {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 50%;
-    height: 30px;
-
+  -webkit-appearance: none;
+  appearance: none;
+  width: 50%;
+  height: 30px;
 }
 
 .weapon {
-    position: relative;
-    width: 200px;
-    right:-130px;
-    top:-250px;
-
+  position: relative;
+  width: 200px;
+  right: -130px;
+  top: -250px;
 }

@@ -4,6 +4,7 @@ var current_enemy = "hollow";
 var current_weapon = "stick";
 var enemy_integer = 1;
 var weapon_integer = 1;
+var current_enemy_health = 0;
 
 var enemy_theme = new Audio("Media/Audio/enemy-theme.ogg");
 
@@ -19,8 +20,8 @@ var EnemyList = {
         "soles": 10, //Soles
     },
     2: {
-        "name": "Big Black Corroder",
-        "image_dancing": "Media/images/DancingBBC.gif",
+        "name": "Big Night Fish",
+        "image_dancing": "Media/images/DancingFish.gif",
         "image_hurt": "Media/images/HurtFish.png",
         "health": 100,
         "alive": true,
@@ -79,6 +80,9 @@ var WeaponList = {
         "damage": 10,
     }
 }
+
+var statistics_view = `<div id="statistics_wrapper"><p class="stats"><span id="click_count"></span></span> : Clicks</p><p class="stats"><span id="soles_count"></span> : Soles</p></div>`;
+
 // functions 
 function start_game() {
     document.getElementById("start-screen").remove();
@@ -86,6 +90,8 @@ function start_game() {
     summon_enemy("hollow");
     summon_weapon("stick");
     
+    document.getElementById("enemy-container").insertAdjacentHTML("beforebegin", statistics_view);
+
     full_bar_sequencer();
     quarter_bar_sequencer();
 }
@@ -117,8 +123,9 @@ function theme_loop(status) {
 
 function summon_enemy(name) {
     current_enemy = name;
+    current_enemy_health = EnemyList[enemy_integer].health;
     enemy_wrapper.innerHTML += `<div id="current-enemy"><button class="damage-button" id="damage-enemy" onclick="damageEnemy()"><img id="enemy-image" src="${EnemyList[enemy_integer].image_dancing}"></button></span><img class="weapon" id="weapon-image" src="${WeaponList[weapon_integer].image_default}"></div>`;
-    document.getElementById("enemy-container").insertAdjacentHTML("beforebegin", `<progress id="enemy-health" value="${EnemyList[enemy_integer].health}" max="${EnemyList[enemy_integer].health}"></progress><p id="enemy-name">${EnemyList[enemy_integer].name}</p>`) 
+    document.getElementById("enemy-container").insertAdjacentHTML("beforebegin", `<progress id="enemy-health" value="${EnemyList[enemy_integer].health}" max="${EnemyList[enemy_integer].health}"></progress><p id="health-label"><span id="current-health">${current_enemy_health}</span>/${EnemyList[enemy_integer].health}</p> <p id="enemy-name">${EnemyList[enemy_integer].name}</p>`)
 }
 
 function summon_weapon(name) {
@@ -140,11 +147,14 @@ function damageEnemy() {
             document.getElementById("enemy-image").src = EnemyList[enemy_integer].image_dancing;
         }, 200);
 
-        document.getElementById("enemy-health").value -= 1;
+        current_enemy_health -= WeaponList[weapon_integer].damage;
+        document.getElementById("enemy-health").value = current_enemy_health;
+        document.getElementById("current-health").innerHTML = current_enemy_health;
         
         if(document.getElementById("enemy-health").value <= 0) {
             enemy_wrapper.innerHTML = "";
             document.getElementById("enemy-health").remove();
+            document.getElementById("health-label").remove();
             document.getElementById("enemy-name").remove();
             var death = new Audio("Media/Audio/Souls.mp3");
             death.play();
@@ -154,4 +164,8 @@ function damageEnemy() {
         } else {
             return 0;
         }
+}
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
