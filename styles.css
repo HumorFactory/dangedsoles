@@ -1,12 +1,13 @@
 @font-face {
-    font-family: "MATURASC";
-    src: url("");
+    font-family: "pixel";
+    src: url("http://127.0.0.1:5500/Media/Fonts/munro.ttf");
 }
 
 html {
-
+    font-family: "pixel";
     background-color: #2F2525;
 }
+
 img {
   width: 100%;
 }
@@ -59,6 +60,4 @@ img {
   width: 200px;
   right: -130px;
   top: -250px;
-}
-
 }
