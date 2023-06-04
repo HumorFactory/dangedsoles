@@ -1,11 +1,12 @@
 @font-face {
     font-family: "pixel";
-    src: url("http://127.0.0.1:5500/Media/Fonts/munro.ttf");
+    src: url("http://127.0.0.1:8080/Media/Fonts/munro.ttf");
 }
 
 html {
     font-family: "pixel";
     background-color: #2F2525;
+    overflow: hidden;
 }
 
 img {
@@ -18,18 +19,40 @@ img {
   justify-content: center;
 }
 
+#statistics-wrapper {
+  position: absolute;
+  top:0;
+  right:0;
+  margin-right:1em;
+  color:rgb(255, 105, 105);
+  font-size: 25px;
+  text-align: right;
+}
+
+
+.stats {
+  margin:0;
+  margin-top: 0.3em;
+  text-align: right;
+}
+
+.stats span {
+  color:cornsilk;
+}
+
+
 #enemy-wrapper,
 #weapon-wrapper {
   position: absolute;
 }
 
 #enemy-wrapper {
-  width: 512px;
+  width: 30%;
   margin: 1rem;
 }
 
 #enemy-name {
-  color: #ffffff;
+  color: cornsilk;
   font-size: 45px;
 }
 
@@ -52,12 +75,30 @@ img {
   -webkit-appearance: none;
   appearance: none;
   width: 50%;
-  height: 30px;
+  height: 2em;
+  border: 2px solid cornsilk;
+  color: cornsilk;
+  background: #211818;
+  margin-top: 0.2em;
+}
+
+progress::-webkit-progress-value {
+    background-color: #51ac57;
+}
+
+progress::-webkit-progress-bar {background-color: #2F2525;}
+
+#health-label {
+    color: #ffffff;
+    font-size: 20px;
+    position: relative;
+    top: -1.4em;
+    margin:0;
 }
 
 .weapon {
   position: relative;
-  width: 200px;
-  right: -130px;
-  top: -250px;
+  width: 35%;
+  right: -24%;
+  top: -25vh;
 }

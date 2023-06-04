@@ -5,6 +5,8 @@ var current_weapon = "stick";
 var enemy_integer = 1;
 var weapon_integer = 1;
 var current_enemy_health = 0;
+var soles_count = 0;
+var click_count = 0;
 
 var enemy_theme = new Audio("Media/Audio/enemy-theme.ogg");
 
@@ -81,12 +83,12 @@ var WeaponList = {
     }
 }
 
-var statistics_view = `<div id="statistics_wrapper"><p class="stats"><span id="click_count"></span></span> : Clicks</p><p class="stats"><span id="soles_count"></span> : Soles</p></div>`;
+var statistics_view = `<div id="statistics-wrapper"><p class="stats"><span id="click_count">0</span>  Clicks</p><p class="stats"><span id="soles_count">0</span>  Soles</p></div>`;
 
 // functions 
 function start_game() {
     document.getElementById("start-screen").remove();
-    theme_loop("play");
+    // theme_loop("play");
     summon_enemy("hollow");
     summon_weapon("stick");
     
@@ -136,6 +138,8 @@ function summon_weapon(name) {
 function damageEnemy() {
 
         enemyHurtArray[Math.floor(Math.random() * 5)].play();
+        ++click_count;
+        document.getElementById("click_count").innerHTML = numberWithCommas(click_count);
         document.getElementById("weapon-image").src = WeaponList[weapon_integer].image_hitting;
         setTimeout(function () {
             document.getElementById("weapon-image").src = WeaponList[weapon_integer].image_default;
@@ -158,6 +162,8 @@ function damageEnemy() {
             document.getElementById("enemy-name").remove();
             var death = new Audio("Media/Audio/Souls.mp3");
             death.play();
+            soles_count += EnemyList[enemy_integer].soles;
+            document.getElementById("soles_count").innerHTML = numberWithCommas(soles_count);
             enemy_integer++;
             summon_enemy(EnemyList[enemy_integer]);
 
