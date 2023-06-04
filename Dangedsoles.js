@@ -10,6 +10,8 @@ var click_count = 0;
 
 var enemy_theme = new Audio("Media/Audio/enemy-theme.ogg");
 
+var alert = new Audio("Media/Audio/ALERT.mp3");
+
 var enemyHurtArray = [new Audio("Media/Audio/Ow1.mp3"), new Audio("Media/Audio/Ow2.mp3"), new Audio("Media/Audio/Ow3.mp3"), new Audio("Media/Audio/Ow4.mp3")];
 // enemy list
 var EnemyList = {
@@ -124,10 +126,17 @@ function theme_loop(status) {
 }
 
 function summon_enemy(name) {
+    if(enemy_integer % 4 === 0 ) {
+        alert.play();
+        document.getElementById("warning-message").innerHTML = "WARNING: BOSS FIGHT INCOMING!";
+        setInterval(function () {
+            document.getElementById("warning-message").innerHTML = "";
+        }, 5000);
+    }
     current_enemy = name;
     current_enemy_health = EnemyList[enemy_integer].health;
     enemy_wrapper.innerHTML += `<div id="current-enemy"><button class="damage-button" id="damage-enemy" onclick="damageEnemy()"><img id="enemy-image" src="${EnemyList[enemy_integer].image_dancing}"></button></span><img class="weapon" id="weapon-image" src="${WeaponList[weapon_integer].image_default}"></div>`;
-    document.getElementById("enemy-container").insertAdjacentHTML("beforebegin", `<progress id="enemy-health" value="${EnemyList[enemy_integer].health}" max="${EnemyList[enemy_integer].health}"></progress><p id="health-label"><span id="current-health">${current_enemy_health}</span>/${EnemyList[enemy_integer].health}</p> <p id="enemy-name">${EnemyList[enemy_integer].name}</p>`)
+    document.getElementById("enemy-container").insertAdjacentHTML("beforebegin", `<progress id="enemy-health" value="${EnemyList[enemy_integer].health}" max="${EnemyList[enemy_integer].health}"></progress><p id="health-label"><span id="current-health">${current_enemy_health}</span>/${EnemyList[enemy_integer].health}</p> <p id="enemy-name">${EnemyList[enemy_integer].name}</p><div id="warning"><p id="warning-message"></p></div>`)
 }
 
 function summon_weapon(name) {
@@ -137,7 +146,7 @@ function summon_weapon(name) {
 
 function damageEnemy() {
 
-        enemyHurtArray[Math.floor(Math.random() * 5)].play();
+        enemyHurtArray[Math.floor(Math.random() * 4)].play();
         ++click_count;
         document.getElementById("click_count").innerHTML = numberWithCommas(click_count);
         document.getElementById("weapon-image").src = WeaponList[weapon_integer].image_hitting;
