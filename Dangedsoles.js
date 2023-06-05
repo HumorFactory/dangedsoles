@@ -9,9 +9,8 @@ var soles_count = 0;
 var click_count = 0;
 
 var enemy_theme = new Audio("Media/Audio/enemy-theme.ogg");
-
 var alert = new Audio("Media/Audio/ALERT.mp3");
-
+var statistics_view = `<div id="shop-wrapper"><button id="shop-button" onclick="open_shop();">SHOP</button></div><div id="statistics-wrapper"><p class="stats"><span id="click_count">0</span>  Clicks</p><p class="stats"><span id="soles_count">0</span>  Soles</p></div>`;
 var enemyHurtArray = [new Audio("Media/Audio/Ow1.mp3"), new Audio("Media/Audio/Ow2.mp3"), new Audio("Media/Audio/Ow3.mp3"), new Audio("Media/Audio/Ow4.mp3")];
 // enemy list
 var EnemyList = {
@@ -84,10 +83,7 @@ var WeaponList = {
         "damage": 10,
     }
 }
-
-var statistics_view = `<div id="statistics-wrapper"><p class="stats"><span id="click_count">0</span>  Clicks</p><p class="stats"><span id="soles_count">0</span>  Soles</p></div>`;
-
-// functions 
+// game functionality
 function start_game() {
     document.getElementById("start-screen").remove();
     // theme_loop("play");
@@ -98,18 +94,6 @@ function start_game() {
 
     full_bar_sequencer();
     quarter_bar_sequencer();
-}
-
-function full_bar_sequencer() {
-    setTimeout(function () {
-    full_bar_sequencer();
-    }, 1600);
-}
-
-function quarter_bar_sequencer() {
-    setTimeout(function () {
-    quarter_bar_sequencer();
-    }, 400);
 }
 
 function theme_loop(status) {
@@ -183,4 +167,15 @@ function damageEnemy() {
 
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+
+function open_shop() {
+    document.getElementById("shop-container").style.visibility = "visible";
+    document.getElementById("shop-container-background").style.visibility = "visible";
+}
+
+function close_shop() {
+    document.getElementById("shop-container").style.visibility = "hidden";
+    document.getElementById("shop-container-background").style.visibility = "hidden";
 }
