@@ -86,7 +86,7 @@ var WeaponList = {
 // game functionality
 function start_game() {
     document.getElementById("start-screen").remove();
-    // theme_loop("play");
+    theme_loop("play");
     summon_enemy("hollow");
     summon_weapon("stick");
     
