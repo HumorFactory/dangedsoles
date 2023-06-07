@@ -17,12 +17,37 @@
     <div id="shop-container-background"></div>
     <div id="shop-container">
       <button id="close-shop" onclick="close_shop();">X</button>
-      <table>
-        <tr><td>Weapons</td><td>Enchantments</td><td>Explosives</td><td>Accolades</td></tr>
-        <tr><td>Sharpened Stick</td><td>Sharpness</td><td>Dynamite</td><td>Arthritis</td></tr>
-        <tr><td>Banished Saber</td><td>Crit Boost</td><td>EMP</td><td>Whispers of the dead</td></tr>
-        <tr><td>Knight's Short Sword</td><td>Looting</td><td>C4</td><td></td></tr>
-        <tr><td></td><td>Mind Control</td><td>Land Mine</td><td></td></tr>
+      <table id="shop-items">
+        <tr>
+          <td>Weapons</td>
+          <td>Enchantments</td>
+          <td>Explosives</td>
+          <td>Accolades</td>
+        </tr>
+        <tr>
+          <td><button onclick="purchaseItem('sharp-stick')" id="purchase_sharp-stick" class="shop-button tooltip"><img src="Media/images/SharpStick.png"><span class="tooltiptext">Sharp Stick<br><span>50 soles</span></span></button></td>
+          <td><button onclick="purchaseItem('sharpness')" id="purchase_sharpness" class="shop-button tooltip"><img src="Media/images/icon_sharpness.png"><span class="tooltiptext">Sharpness<br><span>300 clicks</span></span></button></td>
+          <td><button onclick="purchaseItem('dynamite')" id="purchase_dynamite" class="shop-button tooltip"><img src="Media/images/icon_dynamite.png"><span class="tooltiptext">Dynamite<br><span>790 soles</span></span></button></td>
+          <td><button onclick="purchaseItem('arthritis')" id="purchase_arthritis" class="shop-button tooltip"><img src="Media/images/icon_arthritis.png"><span class="tooltiptext">Arthritis<br><span>50,000 clicks</span></span></button></td>
+        </tr>
+        <tr>
+          <td><button onclick="purchaseItem('banished-saber')" id="purchase_banished-saber" class="shop-button tooltip"><img src="Media/images/BanishedSaber.png"><span class="tooltiptext">Banished Saber<br><span>600 soles</span></span></button></td>
+          <td><button onclick="purchaseItem('crit-boost')" id="purchase_crit-boost" class="shop-button tooltip"><img src="Media/images/icon_crit_boost.png"><span class="tooltiptext">Crit Boost<br><span>3,000 soles</span></span></button></td>
+          <td><button onclick="purchaseItem('molotov')" id="purchase_molotov" class="shop-button tooltip"><img src="Media/images/icon_molotov.png"><span class="tooltiptext">Molotov<br><span>1,800 soles</span></span></button></td>
+          <td><button onclick="purchaseItem('whispersofdead')" id="purchase_whispersofdead" class="shop-button tooltip"><img src="Media/images/icon_whispersofdead.png"><span class="tooltiptext">Whispers of the Dead<br><span>25,000 soles</span></span></button></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><button onclick="purchaseItem('looting')" id="purchase_looting" class="shop-button tooltip"><img src="Media/images/icon_looting.png"><span class="tooltiptext">Looting<br><span>5,300 soles</span></span></button></td>
+          <td><button onclick="purchaseItem('c4')" id="purchase_c4" class="shop-button tooltip"><img src="Media/images/icon_c4.png"><span class="tooltiptext">C4<br><span>8,500 soles</span></span></button></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><button onclick="purchaseItem('mind-control')" id="purchase_mind-control" class="shop-button tooltip"><img src="Media/images/icon_mindcontrol.png"><span class="tooltiptext">Mind Control<br><span>9,000 soles</span></span></button></td>
+          <td></td>
+          <td></td>
+        </tr>        
       </table>
     </div>
     <div id="start-screen"><button onclick="start_game()">Start Game</button></div>
