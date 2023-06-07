@@ -92,14 +92,11 @@ var WeaponList = {
 };
 // game functionality
 function start_game() {
-  document.getElementById("start-screen").remove();
-  // theme_loop("play");
-  summon_enemy("hollow");
-  summon_weapon("stick");
-
-  document
-    .getElementById("enemy-container")
-    .insertAdjacentHTML("beforebegin", statistics_view);
+    document.getElementById("start-screen").remove();
+    theme_loop("play");
+    summon_enemy("hollow");
+    summon_weapon("stick");
+    document.getElementById("enemy-container").insertAdjacentHTML("beforebegin", statistics_view);
 
   full_bar_sequencer();
   quarter_bar_sequencer();
